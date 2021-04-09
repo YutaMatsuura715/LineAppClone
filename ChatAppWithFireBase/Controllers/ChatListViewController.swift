@@ -25,7 +25,7 @@ class ChatListViewController: UIViewController{
 
 extension ChatListViewController: UITableViewDelegate,UITableViewDataSource{
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,7 +42,6 @@ extension ChatListViewController: UITableViewDelegate,UITableViewDataSource{
         let storyboard = UIStoryboard.init(name: "ChatRoom", bundle: nil)
         
         let chatRoomViewController = storyboard.instantiateViewController(identifier: "ChatRoomViewController")
-        print(chatRoomViewController)
         navigationController?.pushViewController(chatRoomViewController, animated: true)
     }
     
