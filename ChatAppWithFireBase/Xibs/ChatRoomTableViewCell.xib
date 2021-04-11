@@ -51,6 +51,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="MessageTextViewWidthConstraint" destination="50w-Un-atK" id="uyI-cN-xri"/>
                 <outlet property="messageTextview" destination="rft-di-CHd" id="6GF-79-leV"/>
                 <outlet property="userImageView" destination="mMn-fD-FLc" id="ze1-HL-5I3"/>
             </connections>

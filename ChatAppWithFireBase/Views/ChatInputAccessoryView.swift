@@ -7,10 +7,22 @@
 
 import UIKit
 
+protocol ChatInputAccessaroyViewDelegate: class{
+    func tappedSendButton(text: String)
+}
+
 class ChatInputAccessaroyView: UIView{
     
     @IBOutlet weak var chatTextView: UITextView!
     @IBOutlet weak var sendbutton: UIButton!
+    @IBAction func tappedSendButton(_ sender: Any) {
+        guard let text = chatTextView.text else { return }
+        delegate?.tappedSendButton(text: text)
+        print("tappedsendbutton")
+    }
+    
+    weak var delegate: ChatInputAccessaroyViewDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -24,15 +36,21 @@ class ChatInputAccessaroyView: UIView{
         chatTextView.layer.borderColor = UIColor.rgb(red: 230, green: 230, blue: 230).cgColor
         chatTextView.layer.borderWidth = 1
         
+        
         sendbutton.layer.cornerRadius = 15
         sendbutton.imageView?.contentMode = .scaleAspectFill
         sendbutton.contentHorizontalAlignment = .fill
         sendbutton.contentVerticalAlignment = .fill
         sendbutton.isEnabled = false
+        
+        chatTextView.text = ""
+        chatTextView.delegate = self
 
-        
-        
-        
+    }
+    
+    func removeText(){
+        chatTextView.text = ""
+        sendbutton.isEnabled = false
     }
     
     override var intrinsicContentSize: CGSize{
@@ -52,6 +70,18 @@ class ChatInputAccessaroyView: UIView{
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+extension ChatInputAccessaroyView: UITextViewDelegate{
+    
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text.isEmpty{
+            sendbutton.isEnabled = false
+        } else {
+            sendbutton.isEnabled = true
+        }
+    }
+
 }
 
 
