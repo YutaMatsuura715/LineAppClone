@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Yfm-Qq-Mkm">
+            <objects>
+                <navigationController id="jBm-s9-ZSz" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6QM-4a-Gav">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Mkz-dc-d1l" kind="relationship" relationship="rootViewController" id="p8o-TN-klF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GQt-5d-Mhg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-561" y="85"/>
+        </scene>
+        <!--User List View Controller-->
+        <scene sceneID="KNd-24-94g">
+            <objects>
+                <viewController storyboardIdentifier="UserListViewController" id="Mkz-dc-d1l" customClass="UserListViewController" customModule="ChatAppWithFireBase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9R2-mk-FZ3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tds-tg-N4S">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellId" id="8jT-7D-hRl" customClass="UserListTableViewCell" customModule="ChatAppWithFireBase" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8jT-7D-hRl" id="TvV-FX-9Vo">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cet-EU-LvZ">
+                                                    <rect key="frame" x="30" y="10" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="XmJ-aD-7da"/>
+                                                        <constraint firstAttribute="width" secondItem="cet-EU-LvZ" secondAttribute="height" multiplier="1:1" id="jFa-ew-yWp"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="太郎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnJ-eB-sT1">
+                                                    <rect key="frame" x="95" y="24.5" width="35" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cet-EU-LvZ" firstAttribute="leading" secondItem="TvV-FX-9Vo" secondAttribute="leadingMargin" constant="10" id="Dtc-i3-Lou"/>
+                                                <constraint firstItem="UnJ-eB-sT1" firstAttribute="leading" secondItem="cet-EU-LvZ" secondAttribute="trailing" constant="15" id="cly-aM-FWw"/>
+                                                <constraint firstItem="UnJ-eB-sT1" firstAttribute="centerY" secondItem="TvV-FX-9Vo" secondAttribute="centerY" id="nPS-Sj-zL9"/>
+                                                <constraint firstItem="cet-EU-LvZ" firstAttribute="centerY" secondItem="TvV-FX-9Vo" secondAttribute="centerY" id="vLu-GI-nc0"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="userImageView" destination="cet-EU-LvZ" id="rmx-qA-B6p"/>
+                                            <outlet property="usernameLabel" destination="UnJ-eB-sT1" id="ubP-k7-mhO"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vKN-dw-B7C"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vKN-dw-B7C" firstAttribute="trailing" secondItem="tds-tg-N4S" secondAttribute="trailing" id="0tL-bG-eEA"/>
+                            <constraint firstItem="tds-tg-N4S" firstAttribute="leading" secondItem="vKN-dw-B7C" secondAttribute="leading" id="PD8-d1-cDi"/>
+                            <constraint firstItem="tds-tg-N4S" firstAttribute="top" secondItem="vKN-dw-B7C" secondAttribute="top" id="T4P-F5-uoz"/>
+                            <constraint firstItem="vKN-dw-B7C" firstAttribute="bottom" secondItem="tds-tg-N4S" secondAttribute="bottom" id="pVw-dA-Mw3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="TLz-nI-iip">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="yAP-AE-VVm">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="4kG-o3-ggH">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.58062836995714395" green="0.7354680686069569" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="会話を開始">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="startChatButton" destination="4kG-o3-ggH" id="F7J-Ye-VU1"/>
+                        <outlet property="userListTableView" destination="tds-tg-N4S" id="0ZQ-My-l6L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x2f-Pa-d9r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="215.94202898550725" y="91.741071428571431"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

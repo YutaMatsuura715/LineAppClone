@@ -82,10 +82,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="dateLabel" destination="a2s-wD-Pvk" id="BAJ-cZ-WGS"/>
-                                            <outlet property="latestMessageLabel" destination="iUU-df-vez" id="hVf-93-jap"/>
-                                            <outlet property="partnerLabel" destination="YrY-96-Ymc" id="YQa-Au-WbG"/>
-                                            <outlet property="userImageView" destination="oL8-Pg-zDi" id="xUo-Tj-EiC"/>
+                                            <outlet property="dateLabel" destination="a2s-wD-Pvk" id="0bf-Xx-y30"/>
+                                            <outlet property="latestMessageLabel" destination="iUU-df-vez" id="OD0-We-qA4"/>
+                                            <outlet property="partnerLabel" destination="YrY-96-Ymc" id="dGm-Ek-TAW"/>
+                                            <outlet property="userImageView" destination="oL8-Pg-zDi" id="AEU-rl-ted"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
