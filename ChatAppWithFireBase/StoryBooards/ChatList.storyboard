@@ -36,7 +36,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellId" rowHeight="80" id="VHN-tA-aga" customClass="ChatListTabelViewCell" customModule="ChatAppWithFireBase" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellId" rowHeight="80" id="VHN-tA-aga" customClass="ChatListTableViewCell" customModule="ChatAppWithFireBase" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VHN-tA-aga" id="y6E-Zh-DPs">
@@ -82,10 +82,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="dateLabel" destination="a2s-wD-Pvk" id="0bf-Xx-y30"/>
-                                            <outlet property="latestMessageLabel" destination="iUU-df-vez" id="OD0-We-qA4"/>
-                                            <outlet property="partnerLabel" destination="YrY-96-Ymc" id="dGm-Ek-TAW"/>
-                                            <outlet property="userImageView" destination="oL8-Pg-zDi" id="AEU-rl-ted"/>
+                                            <outlet property="dateLabel" destination="a2s-wD-Pvk" id="Pqc-y7-taY"/>
+                                            <outlet property="latestMessageLabel" destination="iUU-df-vez" id="urS-TV-yEs"/>
+                                            <outlet property="partnerLabel" destination="YrY-96-Ymc" id="Uwc-yU-bPD"/>
+                                            <outlet property="userImageView" destination="oL8-Pg-zDi" id="UQI-L6-4qK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -102,7 +102,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="gKH-oB-UKx"/>
                     <connections>
-                        <outlet property="ChatListTableView" destination="i2d-AU-rot" id="3a5-6h-rvP"/>
+                        <outlet property="chatListTableView" destination="i2d-AU-rot" id="dCS-9y-Uct"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hsC-KL-4h4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
